@@ -15,7 +15,7 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            Container(child: Lottie.asset(name),)
+            Container(child: Lottie.asset("images/splash-icon.json"),)
           ],
         ),
       ),
