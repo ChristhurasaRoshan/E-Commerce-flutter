@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/pages/HomePage.dart';
+import 'package:flutter_counter_app/screens/auth-ui/splash-screen.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context){
     return MaterialApp(
@@ -11,9 +14,8 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
-      routes: {
-        "/" : (context) => HomePage()
-    },
+      
+      home: const SplashScreen(),
     );
   }
 }
