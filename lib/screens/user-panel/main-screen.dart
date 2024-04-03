@@ -11,8 +11,8 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:Colors.amber,
-        title:Text('data'),
+        backgroundColor:Colors.pink,
+        title:Text(AppConstant.appMainName),
   
       ),
     );
