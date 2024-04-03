@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 class AppConstant {
-  static String appMainName = 'Ecomm';
+  static String appMainName = 'Online Shop';
   static String appPoweredBy = '';
   static const appMainColor = Color.fromRGBO(191, 8, 127, 1);
   static const appScendoryColor = Color.fromARGB(255, 152, 6, 91);

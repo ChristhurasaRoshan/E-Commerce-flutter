@@ -45,6 +45,7 @@ dependencies:
   routemaster: ^1.0.1
   lottie: ^3.1.0
   get: ^4.6.6
+  flutter_keyboard_visibility: ^6.0.0
   
 
 dev_dependencies:
