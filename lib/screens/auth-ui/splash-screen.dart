@@ -1,12 +1,34 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
   @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState(){
+    super.initState();
+    Timer(Duration(seconds: 3),() {
+      //Get.offAll(() => MainScreen());
+    });
+
+  }
+
+
+  @override
   Widget build(BuildContext context) {
+    //final size= MediaQuery.of(context).size;
+
+
     return Scaffold(
+      backgroundColor: Colors.pink,
       appBar: AppBar(
         backgroundColor: Colors.pink,
         elevation: 0,
@@ -15,7 +37,25 @@ class SplashScreen extends StatelessWidget {
       body: Container(
         child: Column(
           children: [
-            Container(child: Lottie.asset("images/splash-icon.json"),)
+            Expanded(
+              child: Container(
+                width: Get.width,
+                alignment: Alignment.center,
+                child: Lottie.asset("images/splash-icon.json")
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(bottom: 70.0),
+              width: Get.width,
+              alignment: Alignment.center,
+              child: Text("Online Shop" , 
+              style:TextStyle(fontSize: 23,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                fontFamily: 'Poppins'
+              ),
+            ),
+            )
           ],
         ),
       ),
