@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              child: Lottie.asset('assets/images/splash-icon.json'),
+              child: Lottie.asset('images/splash-icon.json'),
             ),
             Container(
               margin: EdgeInsets.only(top: 20.0),
