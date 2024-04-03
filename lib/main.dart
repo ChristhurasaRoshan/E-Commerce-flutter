@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/pages/HomePage.dart';
+import 'package:flutter_counter_app/screens/auth-ui/sign-in-screen.dart';
 import 'package:flutter_counter_app/screens/auth-ui/splash-screen.dart';
 import 'package:get/get.dart';
 import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget{
         scaffoldBackgroundColor: Colors.white,
       ),
       
-      home: const MainScreen(),
+      home: const SignInScreen(),
     );
   }
 }
