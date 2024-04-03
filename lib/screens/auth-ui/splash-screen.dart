@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_counter_app/screens/auth-ui/welcome-screen.dart';
+
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
@@ -16,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState(){
     super.initState();
     Timer(Duration(seconds: 3),() {
-      //Get.offAll(() => MainScreen());
+      Get.offAll(() => WelcomeScreen());
     });
 
   }
