@@ -6,8 +6,7 @@ import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
-//import '../../controllers/get-user-data-controller.dart';
-//import 'forget-password-screen.dart';
+
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -17,11 +16,7 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  // final SignInController signInController = Get.put(SignInController());
-  // final GetUserDataController getUserDataController =
-  //     Get.put(GetUserDataController());
-  // TextEditingController userEmail = TextEditingController();
-  // TextEditingController userPassword = TextEditingController();
+  
 
   @override
   Widget build(BuildContext context) {
