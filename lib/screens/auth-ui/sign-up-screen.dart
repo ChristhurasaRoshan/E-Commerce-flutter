@@ -139,8 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   width: Get.width,
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Obx(
-                      () => TextFormField(
+                    child: TextFormField(
                         //controller: userPassword,
                         //obscureText: signUpController.isPasswordVisible.value,
                         cursorColor: AppConstant.appScendoryColor,
@@ -157,7 +156,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                   ),
-                ),
+                
                 SizedBox(
                   height: Get.height / 20,
                 ),
