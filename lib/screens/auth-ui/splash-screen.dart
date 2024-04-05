@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/screens/auth-ui/welcome-screen.dart';
-
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 3),() {
+    Timer(Duration(seconds: 8),() {
       Get.offAll(() => WelcomeScreen());
     });
 
@@ -30,9 +29,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
 
     return Scaffold(
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.pink,
+        backgroundColor: Colors.white,
         elevation: 0,
       ),
 
@@ -43,7 +42,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Container(
                 width: Get.width,
                 alignment: Alignment.center,
-                child: Lottie.asset("images/splash-icon.json")
+                child: Lottie.asset("images/splashicon.json")
               ),
             ),
             Container(
@@ -53,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: Text("Online Shop" , 
               style:TextStyle(fontSize: 23,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.pink,
                 fontFamily: 'Poppins'
               ),
             ),

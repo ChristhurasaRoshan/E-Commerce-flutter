@@ -28,6 +28,7 @@ class _SignInScreenState extends State<SignInScreen> {
     return KeyboardVisibilityBuilder(builder: (context, isKeyboardVisible) {
       return Scaffold(
         appBar: AppBar(
+          
           backgroundColor: AppConstant.appScendoryColor,
           centerTitle: true,
           title: Text(
@@ -39,7 +40,11 @@ class _SignInScreenState extends State<SignInScreen> {
           child: Column(
             children: [
               isKeyboardVisible
-                  ? Text("Welcome to Our app")
+                  ? Text("Welcome to Our app",
+                  style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20))
                   : Column(
                       children: [
                         Lottie.asset('images/splash-icon.json'),
@@ -68,15 +73,14 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                 ),
               ),
+
+
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 5.0),
                 width: Get.width,
                 child: Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Obx(
-                      () => TextFormField(
-                        //controller: userPassword,
-                        //obscureText: signInController.isPasswordVisible.value,
+                    child: TextFormField(
                         cursorColor: AppConstant.appScendoryColor,
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
@@ -89,15 +93,14 @@ class _SignInScreenState extends State<SignInScreen> {
                           ),
                         ),
                       ),
-                    )),
+                    ),
               ),
+
+
+
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 10.0),
                 alignment: Alignment.centerRight,
-                child: GestureDetector(
-                  onTap: () {
-                    //Get.to(() => ForgetPasswordScreen());
-                  },
                   child: Text(
                     "Forget Password?",
                     style: TextStyle(
@@ -105,7 +108,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-              ),
+              
               SizedBox(
                 height: Get.height / 20,
               ),
@@ -122,67 +125,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       "SIGN IN",
                       style: TextStyle(color: AppConstant.appTextColor),
                     ),
-                    onPressed: () {
-                      // String email = userEmail.text.trim();
-                      // String password = userPassword.text.trim();
-
-                      // if (email.isEmpty || password.isEmpty) {
-                      //   Get.snackbar(
-                      //     "Error",
-                      //     "Please enter all details",
-                      //     snackPosition: SnackPosition.BOTTOM,
-                      //     backgroundColor: AppConstant.appScendoryColor,
-                      //     colorText: AppConstant.appTextColor,
-                      //   );
-                      // } else {
-                      //   UserCredential? userCredential = await signInController
-                      //       .signInMethod(email, password);
-
-                      //   var userData = await getUserDataController
-                      //       .getUserData(userCredential!.user!.uid);
-
-                      //   if (userCredential != null) {
-                      //     if (userCredential.user!.emailVerified) {
-                      //       //
-                      //       if (userData[0]['isAdmin'] == true) {
-                      //         Get.snackbar(
-                      //           "Success Admin Login",
-                      //           "login Successfully!",
-                      //           snackPosition: SnackPosition.BOTTOM,
-                      //           backgroundColor: AppConstant.appScendoryColor,
-                      //           colorText: AppConstant.appTextColor,
-                      //         );
-                      //         Get.offAll(() => AdminMainScreen());
-                      //       } else {
-                      //         Get.offAll(() => MainScreen());
-                      //         Get.snackbar(
-                      //           "Success User Login",
-                      //           "login Successfully!",
-                      //           snackPosition: SnackPosition.BOTTOM,
-                      //           backgroundColor: AppConstant.appScendoryColor,
-                      //           colorText: AppConstant.appTextColor,
-                      //         );
-                      //       }
-                      //     } else {
-                      //       Get.snackbar(
-                      //         "Error",
-                      //         "Please verify your email before login",
-                      //         snackPosition: SnackPosition.BOTTOM,
-                      //         backgroundColor: AppConstant.appScendoryColor,
-                      //         colorText: AppConstant.appTextColor,
-                      //       );
-                      //     }
-                      //   } else {
-                      //     Get.snackbar(
-                      //       "Error",
-                      //       "Please try again",
-                      //       snackPosition: SnackPosition.BOTTOM,
-                      //       backgroundColor: AppConstant.appScendoryColor,
-                      //       colorText: AppConstant.appTextColor,
-                      //     );
-                      //   }
-                      // }
-                    },
+                    onPressed: () {},
                   ),
                 ),
               ),
