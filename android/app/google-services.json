@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "310815038944",
+    "project_id": "e-commerce-flutter-app-aeae5",
+    "storage_bucket": "e-commerce-flutter-app-aeae5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310815038944:android:dcfc57dfd6601f652a9f85",
+        "android_client_info": {
+          "package_name": "com.example.cartafri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByqrSOdlZEYQtThZyjeLvt7NziUv3nGXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:310815038944:android:8c4e3f995ee5ceea2a9f85",
+        "android_client_info": {
+          "package_name": "com.example.flutter_counter_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByqrSOdlZEYQtThZyjeLvt7NziUv3nGXg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
