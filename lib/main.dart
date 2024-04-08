@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/screens/auth-ui/sign-up-screen.dart';
 import 'package:flutter_counter_app/screens/auth-ui/splash-screen.dart';
+import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'firebase_options.dart';
 
@@ -25,7 +27,8 @@ class MyApp extends StatelessWidget{
         scaffoldBackgroundColor: Colors.white,
       ),
       
-      home: const SplashScreen(),
+      home: const MainScreen(),
+      builder: EasyLoading.init(),
     );
   }
 }
