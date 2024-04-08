@@ -54,7 +54,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: TextFormField(
-                    //controller: userEmail,
+                    controller: userEmail,
                     cursorColor: AppConstant.appScendoryColor,
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(

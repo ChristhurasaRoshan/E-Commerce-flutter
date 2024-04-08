@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/controllers/google-sign-in-controller.dart';
+import 'package:flutter_counter_app/screens/auth-ui/sign-in-screen.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import '../../utils/app-constant.dart';
@@ -88,7 +89,7 @@ class WelcomeScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
-                    //Get.to(() => SignInScreen());
+                    Get.off(() => SignInScreen());
                   },
                 ),
               ),

@@ -1,5 +1,9 @@
 
+// ignore_for_file: unused_local_variable
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_counter_app/controllers/sign-up-controller.dart';
 import 'package:flutter_counter_app/screens/auth-ui/sign-in-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
@@ -14,12 +18,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  // final SignUpController signUpController = Get.put(SignUpController());
-  // TextEditingController username = TextEditingController();
-  // TextEditingController userEmail = TextEditingController();
-  // TextEditingController userPhone = TextEditingController();
-  // TextEditingController userCity = TextEditingController();
-  // TextEditingController userPassword = TextEditingController();
+  final SignUpController signUpController = Get.put(SignUpController());
+  TextEditingController username = TextEditingController();
+  TextEditingController userEmail = TextEditingController();
+  TextEditingController userPhone = TextEditingController();
+  TextEditingController userCity = TextEditingController();
+  TextEditingController userPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +64,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                      //controller: userEmail,
+                      controller: userEmail,
                       cursorColor: AppConstant.appScendoryColor,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
@@ -80,7 +84,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                      //controller: username,
+                      controller: username,
                       cursorColor: AppConstant.appScendoryColor,
                       keyboardType: TextInputType.name,
                       decoration: InputDecoration(
@@ -100,7 +104,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                      //controller: userPhone,
+                      controller: userPhone,
                       cursorColor: AppConstant.appScendoryColor,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
@@ -120,7 +124,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                      //controller: userCity,
+                      controller: userCity,
                       cursorColor: AppConstant.appScendoryColor,
                       keyboardType: TextInputType.streetAddress,
                       decoration: InputDecoration(
@@ -140,8 +144,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: TextFormField(
-                        //controller: userPassword,
-                        //obscureText: signUpController.isPasswordVisible.value,
+                        controller: userPassword,
+                        obscureText: signUpController.isPasswordVisible.value,
                         cursorColor: AppConstant.appScendoryColor,
                         keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
@@ -173,50 +177,50 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         "SIGN UP",
                         style: TextStyle(color: AppConstant.appTextColor),
                       ),
-                      onPressed: () {
-                        // String name = username.text.trim();
-                        // String email = userEmail.text.trim();
-                        // String phone = userPhone.text.trim();
-                        // String city = userCity.text.trim();
-                        // String password = userPassword.text.trim();
-                        // String userDeviceToken = '';
+                      onPressed: () async {
+                        String name = username.text.trim();
+                        String email = userEmail.text.trim();
+                        String phone = userPhone.text.trim();
+                        String city = userCity.text.trim();
+                        String password = userPassword.text.trim();
+                        String userDeviceToken = '';
 
-                        // if (name.isEmpty ||
-                        //     email.isEmpty ||
-                        //     phone.isEmpty ||
-                        //     city.isEmpty ||
-                        //     password.isEmpty) {
-                        //   Get.snackbar(
-                        //     "Error",
-                        //     "Please enter all details",
-                        //     snackPosition: SnackPosition.BOTTOM,
-                        //     backgroundColor: AppConstant.appScendoryColor,
-                        //     colorText: AppConstant.appTextColor,
-                        //   );
-                        // } else {
-                        //   UserCredential? userCredential =
-                        //       await signUpController.signUpMethod(
-                        //     name,
-                        //     email,
-                        //     phone,
-                        //     city,
-                        //     password,
-                        //     userDeviceToken,
-                        //   );
+                        if (name.isEmpty ||
+                            email.isEmpty ||
+                            phone.isEmpty ||
+                            city.isEmpty ||
+                            password.isEmpty) {
+                          Get.snackbar(
+                            "Error",
+                            "Please enter all details",
+                            snackPosition: SnackPosition.BOTTOM,
+                            backgroundColor: AppConstant.appScendoryColor,
+                            colorText: AppConstant.appTextColor,
+                          );
+                        } else {
+                          UserCredential? userCredential =
+                              await signUpController.signUpMethod(
+                            name,
+                            email,
+                            phone,
+                            city,
+                            password,
+                            userDeviceToken,
+                          );
 
-                        //   if (userCredential != null) {
-                        //     Get.snackbar(
-                        //       "Verification email sent.",
-                        //       "Please check your email.",
-                        //       snackPosition: SnackPosition.BOTTOM,
-                        //       backgroundColor: AppConstant.appScendoryColor,
-                        //       colorText: AppConstant.appTextColor,
-                        //     );
+                          if (userCredential != null) {
+                            Get.snackbar(
+                              "Verification email sent.",
+                              "Please check your email.",
+                              snackPosition: SnackPosition.BOTTOM,
+                              backgroundColor: AppConstant.appScendoryColor,
+                              colorText: AppConstant.appTextColor,
+                            );
 
-                        //     FirebaseAuth.instance.signOut();
-                        //     Get.offAll(() => SignInScreen());
-                        //   }
-                        // }
+                            FirebaseAuth.instance.signOut();
+                            Get.offAll(() => SignInScreen());
+                          }
+                        }
                       },
                     ),
                   ),
