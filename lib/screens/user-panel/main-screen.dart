@@ -7,6 +7,7 @@ import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_counter_app/widgets/banner-widget.dart';
 import 'package:flutter_counter_app/widgets/custom-drawer-widget.dart';
+import 'package:flutter_counter_app/widgets/heading-widget.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -55,22 +56,22 @@ class MainScreen extends StatelessWidget {
               BannerWidget(),
 
               //heading
-              // HeadingWidget(
-              //   headingTitle: "Categories",
-              //   headingSubTitle: "According to your budget",
-              //   onTap: () => Get.to(() => AllCategoriesScreen()),
-              //   buttonText: "See More >",
-              // ),
+              HeadingWidget(
+                headingTitle: "Categories",
+                headingSubTitle: "According to your budget",
+                onTap: () {},
+                buttonText: "See More >",
+              ),
 
               // CategoriesWidget(),
 
               // //heading
-              // HeadingWidget(
-              //   headingTitle: "Flash Sale",
-              //   headingSubTitle: "According to your budget",
-              //   onTap: () => Get.to(() => AllFlashSaleProductScreen()),
-              //   buttonText: "See More >",
-              // ),
+              HeadingWidget(
+                headingTitle: "Flash Sale",
+                headingSubTitle: "According to your budget",
+                onTap: () {},
+                buttonText: "See More >",
+              ),
 
               // FlashSaleWidget(),
 
