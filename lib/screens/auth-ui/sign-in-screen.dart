@@ -158,7 +158,9 @@ class _SignInScreenState extends State<SignInScreen> {
                             Get.snackbar("sucess","login successfully!",
                             snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: AppConstant.appScendoryColor,
-                          colorText: AppConstant.appTextColor,);}
+                          colorText: AppConstant.appTextColor,);
+                          Get.offAll(() => MainScreen());}
+                        //       Get.snackbar(}
                             else{
                                Get.snackbar("Error", "Please verify your email first",
                                snackPosition: SnackPosition.BOTTOM,
