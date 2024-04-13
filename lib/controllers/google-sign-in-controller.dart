@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_counter_app/models/user-model.dart';
 import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
+
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
