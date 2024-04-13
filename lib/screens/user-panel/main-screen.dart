@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_counter_app/screens/auth-ui/welcome-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_counter_app/widgets/banner-widget.dart';
 import 'package:flutter_counter_app/widgets/custom-drawer-widget.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -42,6 +43,50 @@ class MainScreen extends StatelessWidget {
         ],
       ),
       drawer: DrawerWidget(),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Container(
+          child: Column(
+            children: [
+              SizedBox(
+                height: Get.height / 90.0,
+              ),
+              //banners
+              BannerWidget(),
+
+              //heading
+              // HeadingWidget(
+              //   headingTitle: "Categories",
+              //   headingSubTitle: "According to your budget",
+              //   onTap: () => Get.to(() => AllCategoriesScreen()),
+              //   buttonText: "See More >",
+              // ),
+
+              // CategoriesWidget(),
+
+              // //heading
+              // HeadingWidget(
+              //   headingTitle: "Flash Sale",
+              //   headingSubTitle: "According to your budget",
+              //   onTap: () => Get.to(() => AllFlashSaleProductScreen()),
+              //   buttonText: "See More >",
+              // ),
+
+              // FlashSaleWidget(),
+
+              // //heading
+              // HeadingWidget(
+              //   headingTitle: "All Products",
+              //   headingSubTitle: "According to your budget",
+              //   onTap: () => Get.to(() => AllProductsScreen()),
+              //   buttonText: "See More >",
+              // ),
+
+              // AllProductsWidget(),
+            ],
+          ),
+        ),
+      ),
       );
   }}
         
