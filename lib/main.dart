@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget{
         scaffoldBackgroundColor: Colors.white,
       ),
       
-      home: const SignUpScreen(),
+      home: const SplashScreen(),
       builder: EasyLoading.init(),
     );
   }

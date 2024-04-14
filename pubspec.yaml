@@ -53,6 +53,7 @@ dependencies:
   flutter_easyloading: ^3.0.5
   carousel_slider: ^4.2.1
   cached_network_image: ^3.3.1
+  firebase_messaging: ^14.8.1
   
 
 dev_dependencies:

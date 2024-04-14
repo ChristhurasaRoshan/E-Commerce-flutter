@@ -1,7 +1,7 @@
 // ignore_for_file: file_names, unused_local_variable, unused_field, avoid_print
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:flutter_counter_app/controllers/get-device-token-controller.dart';
+import 'package:flutter_counter_app/controllers/get-device-token-controller.dart';
 import 'package:flutter_counter_app/models/user-model.dart';
 import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -15,8 +15,8 @@ class GoogleSignInController extends GetxController {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   Future<void> signInWithGoogle() async {
-    // final GetDeviceTokenController getDeviceTokenController =
-    //     Get.put(GetDeviceTokenController());
+    final GetDeviceTokenController getDeviceTokenController =
+        Get.put(GetDeviceTokenController());
     try {
       final GoogleSignInAccount? googleSignInAccount =
           await googleSignIn.signIn();
@@ -43,14 +43,14 @@ class GoogleSignInController extends GetxController {
             email: user.email.toString(),
             phone: user.phoneNumber.toString(),
             userImg: user.photoURL.toString(),
-            // userDeviceToken: getDeviceTokenController.deviceToken.toString(),
+            userDeviceToken: getDeviceTokenController.deviceToken.toString(),
             country: '',
             userAddress: '',
             street: '',
             isAdmin: false,
             isActive: true,
             createdOn: DateTime.now(),
-            city: '', userDeviceToken: '',
+            city: '',
           );
 
           await FirebaseFirestore.instance
