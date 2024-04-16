@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_local_variable, unnecessary_null_comparison, file_names
-
 import 'package:flutter_counter_app/controllers/sign-in-controller.dart';
 import 'package:flutter_counter_app/screens/admin-panel/admin-main-screen.dart';
 import 'package:flutter_counter_app/screens/auth-ui/sign-up-screen.dart';
@@ -15,7 +13,7 @@ import '../../controllers/get-user-data-controller.dart';
 import 'forget-password-screen.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  const SignInScreen({Key? key}) : super(key: key);
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -150,13 +148,14 @@ class _SignInScreenState extends State<SignInScreen> {
                         UserCredential? userCredential = await signInController
                             .signInMethod(email, password);
 
-                        var userData = await getUserDataController
-                            .getUserData(userCredential!.user!.uid);
+                        if (userCredential != null && userCredential.user != null) {
+                          var userData = await getUserDataController
+                              .getUserData(userCredential.user!.uid);
 
-                        if (userCredential != null) {
                           if (userCredential.user!.emailVerified) {
-                            //
-                            if (userData[0]['isAdmin'] == true) {
+                            if (userData != null &&
+                                userData.isNotEmpty &&
+                                userData[0]['isAdmin'] == true) {
                               Get.snackbar(
                                 "Success Admin Login",
                                 "login Successfully!",

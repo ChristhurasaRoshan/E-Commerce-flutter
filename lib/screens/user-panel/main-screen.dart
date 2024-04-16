@@ -7,7 +7,9 @@ import 'package:flutter_counter_app/screens/auth-ui/welcome-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_counter_app/widgets/banner-widget.dart';
+import 'package:flutter_counter_app/widgets/category-widget.dart';
 import 'package:flutter_counter_app/widgets/custom-drawer-widget.dart';
+import 'package:flutter_counter_app/widgets/flash-sale-widget.dart';
 import 'package:flutter_counter_app/widgets/heading-widget.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -66,7 +68,7 @@ class MainScreen extends StatelessWidget {
                 buttonText: "See More >",
               ),
 
-              // CategoriesWidget(),
+              CategoriesWidget(),
 
               // //heading
               HeadingWidget(
@@ -76,7 +78,7 @@ class MainScreen extends StatelessWidget {
                 buttonText: "See More >",
               ),
 
-              // FlashSaleWidget(),
+              FlashSaleWidget(),
 
               // //heading
               // HeadingWidget(
