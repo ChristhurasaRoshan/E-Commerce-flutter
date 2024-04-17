@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, avoid_print
 import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:flutter_counter_app/models/cart-model.dart';
+import 'package:flutter_counter_app/models/cart-model.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,25 +64,25 @@ class _CartScreenState extends State<CartScreen> {
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
                   final productData = snapshot.data!.docs[index];
-                  // CartModel cartModel = CartModel(
-                  //   productId: productData['productId'],
-                  //   categoryId: productData['categoryId'],
-                  //   productName: productData['productName'],
-                  //   categoryName: productData['categoryName'],
-                  //   salePrice: productData['salePrice'],
-                  //   fullPrice: productData['fullPrice'],
-                  //   productImages: productData['productImages'],
-                  //   deliveryTime: productData['deliveryTime'],
-                  //   isSale: productData['isSale'],
-                  //   productDescription: productData['productDescription'],
-                  //   createdAt: productData['createdAt'],
-                  //   updatedAt: productData['updatedAt'],
-                  //   productQuantity: productData['productQuantity'],
-                  //   productTotalPrice: double.parse(
-                  //       productData['productTotalPrice'].toString()),
-                  // );
+                  CartModel cartModel = CartModel(
+                    productId: productData['productId'],
+                    categoryId: productData['categoryId'],
+                    productName: productData['productName'],
+                    categoryName: productData['categoryName'],
+                    salePrice: productData['salePrice'],
+                    fullPrice: productData['fullPrice'],
+                    productImages: productData['productImages'],
+                    deliveryTime: productData['deliveryTime'],
+                    isSale: productData['isSale'],
+                    productDescription: productData['productDescription'],
+                    createdAt: productData['createdAt'],
+                    updatedAt: productData['updatedAt'],
+                    productQuantity: productData['productQuantity'],
+                    productTotalPrice: double.parse(
+                        productData['productTotalPrice'].toString()),
+                  );
 
-                  //calculate price
+                  // calculate price
                   // productPriceController.fetchProductPrice();
                   // return SwipeActionCell(
                   //   key: ObjectKey(cartModel.productId),
