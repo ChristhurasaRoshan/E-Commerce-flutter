@@ -3,6 +3,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_counter_app/models/cart-model.dart';
 import 'package:flutter_counter_app/models/product-model.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,7 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
-// import '../../models/cart-model.dart';
+
 // import 'cart-screen.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -236,7 +237,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         .collection('cartOrders')
         .doc(widget.productModel.productId.toString());
 
-    DocumentSnapshot snapshot = await documentReference.get();
+    DocumentSnapshot snapshot = await documentReference. get();
 
     if (snapshot.exists) {
       int currentQuantity = snapshot['productQuantity'];
@@ -260,26 +261,26 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         },
       );
 
-      // CartModel cartModel = CartModel(
-      //   productId: widget.productModel.productId,
-      //   categoryId: widget.productModel.categoryId,
-      //   productName: widget.productModel.productName,
-      //   categoryName: widget.productModel.categoryName,
-      //   salePrice: widget.productModel.salePrice,
-      //   fullPrice: widget.productModel.fullPrice,
-      //   productImages: widget.productModel.productImages,
-      //   deliveryTime: widget.productModel.deliveryTime,
-      //   isSale: widget.productModel.isSale,
-      //   productDescription: widget.productModel.productDescription,
-      //   createdAt: DateTime.now(),
-      //   updatedAt: DateTime.now(),
-      //   productQuantity: 1,
-      //   productTotalPrice: double.parse(widget.productModel.isSale
-      //       ? widget.productModel.salePrice
-      //       : widget.productModel.fullPrice),
-      // );
+      CartModel cartModel = CartModel(
+        productId: widget.productModel.productId,
+        categoryId: widget.productModel.categoryId,
+        productName: widget.productModel.productName,
+        categoryName: widget.productModel.categoryName,
+        salePrice: widget.productModel.salePrice,
+        fullPrice: widget.productModel.fullPrice,
+        productImages: widget.productModel.productImages,
+        deliveryTime: widget.productModel.deliveryTime,
+        isSale: widget.productModel.isSale,
+        productDescription: widget.productModel.productDescription,
+        createdAt: DateTime.now(),
+        updatedAt: DateTime.now(),
+        productQuantity: 1,
+        productTotalPrice: double.parse(widget.productModel.isSale
+            ? widget.productModel.salePrice
+            : widget.productModel.fullPrice),
+      );
 
-      // await documentReference.set(cartModel.toMap());
+      await documentReference.set(cartModel.toMap());
 
       print("product added");
     }
