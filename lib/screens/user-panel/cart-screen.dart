@@ -5,7 +5,7 @@ import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter_swipe_action_cell/core/cell.dart';
+import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:get/get.dart';
 
 // import '../../controllers/cart-price-controller.dart';
