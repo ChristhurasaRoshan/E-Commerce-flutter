@@ -1,14 +1,13 @@
 // ignore_for_file: file_names, avoid_print, unused_local_variable, prefer_const_constructors
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:e_comm/models/order-model.dart';
-import 'package:e_comm/screens/user-panel/main-screen.dart';
-import 'package:e_comm/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_counter_app/models/order-model.dart';
+import 'package:flutter_counter_app/screens/user-panel/main-screen.dart';
+import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-
 import 'genrate-order-id-service.dart';
 
 void placeOrder({

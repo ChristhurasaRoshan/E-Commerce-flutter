@@ -7,7 +7,6 @@ import 'package:flutter_counter_app/models/cart-model.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:get/get.dart';
-
 import '../../controllers/cart-price-controller.dart';
 import '../../controllers/get-customer-device-token-controller.dart';
 import '../../services/place-order-service.dart';
