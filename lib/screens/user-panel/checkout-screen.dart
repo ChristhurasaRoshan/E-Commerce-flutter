@@ -270,7 +270,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       customerDeviceToken: customerToken,
                     );
                   } else {
-                    print("Fill The Details");
+                    print("Please fill The Details");
                   }
                 },
                 child: Text(
