@@ -1,15 +1,14 @@
 // ignore_for_file: file_names, prefer_const_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, avoid_print
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_counter_app/controllers/cart-price-controller.dart';
 import 'package:flutter_counter_app/models/cart-model.dart';
+import 'package:flutter_counter_app/screens/user-panel/checkout-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swipe_action_cell/core/cell.dart';
 import 'package:get/get.dart';
-
-// import '../../controllers/cart-price-controller.dart';
-// import 'checkout-screen.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
@@ -20,8 +19,8 @@ class CartScreen extends StatefulWidget {
 
 class _CartScreenState extends State<CartScreen> {
   User? user = FirebaseAuth.instance.currentUser;
-  // final ProductPriceController productPriceController =
-  //     Get.put(ProductPriceController());
+  final ProductPriceController productPriceController =
+      Get.put(ProductPriceController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -82,8 +81,8 @@ class _CartScreenState extends State<CartScreen> {
                         productData['productTotalPrice'].toString()),
                   );
 
-                  calculate price
-                  productPriceController.fetchProductPrice();
+                  //calculate price
+                  ProductPriceController.fetchProductPrice();
                   return SwipeActionCell(
                     key: ObjectKey(cartModel.productId),
                     trailingActions: [
@@ -188,12 +187,12 @@ class _CartScreenState extends State<CartScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Obx(
-            //   () => Text(
-            //     // " Total ${productPriceController.totalPrice.value.toStringAsFixed(1)} : PKR",
-            //     // style: TextStyle(fontWeight: FontWeight.bold),
-            //   ),
-            // ),
+            Obx(
+              () => Text(
+                " Total ${productPriceController.totalPrice.value.toStringAsFixed(1)} : PKR",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Material(
@@ -210,7 +209,7 @@ class _CartScreenState extends State<CartScreen> {
                       style: TextStyle(color: AppConstant.appTextColor),
                     ),
                     onPressed: () {
-                      // Get.to(() => CheckOutScreen());
+                      Get.to(() => CheckOutScreen());
                     },
                   ),
                 ),
