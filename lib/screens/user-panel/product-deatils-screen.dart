@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_counter_app/models/cart-model.dart';
 import 'package:flutter_counter_app/models/product-model.dart';
+import 'package:flutter_counter_app/screens/auth-ui/sign-in-screen.dart';
 import 'package:flutter_counter_app/screens/user-panel/cart-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,7 +13,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class ProductDetailsScreen extends StatefulWidget {
@@ -188,7 +189,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                       color: AppConstant.appTextColor),
                                 ),
                                 onPressed: () async {
-                                  // Get.to(() => SignInScreen());
+                                   Get.to(() => SignInScreen());
 
                                   await checkProductExistence(uId: user!.uid);
                                 },
@@ -213,15 +214,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   }) async {
     final number = "+923075812354";
     final message =
-        "Hello Techi4u \n i want to know about this product \n ${productModel.productName} \n ${productModel.productId}";
+        "Hello Online Shop \n i want to know about this product \n ${productModel.productName} \n ${productModel.productId}";
 
     final url = 'https://wa.me/$number?text=${Uri.encodeComponent(message)}';
 
-    // if (await canLaunch(url)) {
-    //   await launch(url);
-    // } else {
-    //   throw 'Could not launch $url';
-    // }
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   //checkl prooduct exist or not
