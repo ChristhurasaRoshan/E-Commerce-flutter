@@ -5,6 +5,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_counter_app/models/cart-model.dart';
 import 'package:flutter_counter_app/models/product-model.dart';
+import 'package:flutter_counter_app/screens/user-panel/cart-screen.dart';
 import 'package:flutter_counter_app/utils/app-constant.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -13,8 +14,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:url_launcher/url_launcher.dart';
 
-
-// import 'cart-screen.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   ProductModel productModel;
@@ -36,17 +35,17 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
           "Product Details",
           style: TextStyle(color: AppConstant.appTextColor),
         ),
-        // actions: [
-        //   GestureDetector(
-        //     onTap: () => Get.to(() => CartScreen()),
-        //     child: Padding(
-        //       padding: const EdgeInsets.all(8.0),
-        //       child: Icon(
-        //         Icons.shopping_cart,
-        //       ),
-        //     ),
-        //   ),
-        // ],
+        actions: [
+          GestureDetector(
+            onTap: () => Get.to(() => CartScreen()),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                Icons.shopping_cart,
+              ),
+            ),
+          ),
+        ],
       ),
       body: Container(
         child: Column(
