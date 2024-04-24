@@ -87,6 +87,7 @@ class _AllFlashSaleProductScreenState extends State<AllFlashSaleProductScreen> {
                 //   createdAt: snapshot.data!.docs[index]['createdAt'],
                 //   updatedAt: snapshot.data!.docs[index]['updatedAt'],
                 // );
+
                 return Row(
                   children: [
                     GestureDetector(
